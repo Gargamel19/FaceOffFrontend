@@ -1,15 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { SpielerXComponent } from './spielerX.component';
+import { SpielerXNameComponent } from './spielerXName.component';
 
 @NgModule({
   declarations: [
-    SpielerXComponent
+    SpielerXNameComponent
   ],
   imports: [ BrowserModule,
   ],
   providers: [],
-  bootstrap: [SpielerXComponent]
+  bootstrap: [SpielerXNameComponent]
 })
-export class SpielerXModule { }
+export class SpielerXNameModule { }

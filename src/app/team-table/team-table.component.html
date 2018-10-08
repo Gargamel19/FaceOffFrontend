@@ -25,11 +25,11 @@
           </thead>
           <tbody>
           <tr *ngFor="let team of teams | async">
-            <td>{{team.teamNumber.id}}</td>
-            <td>{{team.name}}</td>
-            <td>Spieler1</td>
-            <td>Spieler2</td>
-            <td>{{spieler1ROH.kills + spieler2ROW.kills}}</td>
+            <td (click)="toTeam(team.teamNumber.id)">{{team.teamNumber.id}}</td>
+            <td (click)="toTeam(team.teamNumber.id)">{{team.name}}</td>
+            <td (click)="toPlayer(team.member[0])">{{team.member[0]}}</td>
+            <td (click)="toPlayer(team.member[1])">{{team.member[1]}}</td>
+            <td></td>
           </tr>
 
           </tbody>

@@ -20,4 +20,7 @@ export class SpielerService {
   findBySpielerNummer(id: number): Observable<Spieler> {
     return this.http.get<Spieler>(this.apiUrl + '/' + id);
   }
+  findByName(name: string): Observable<Spieler> {
+    return this.http.get<Spieler>(this.apiUrl + '/@/' + name);
+  }
 }

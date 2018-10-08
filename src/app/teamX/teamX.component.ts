@@ -12,15 +12,15 @@ import { Observable } from 'rxjs';
 export class TeamXComponent implements OnInit {
 
   title = 'FaceOff';
-  id: number;
+  name: string;
   teams: Observable<Team>;
-  team: Team[];
-  teamSolo: Team;
+  team: Team;
 
 constructor(private route: ActivatedRoute, private teamService: TeamService) {
-    this.route.params.subscribe( params => this.id = params.id );
+    this.route.params.subscribe( params => this.name = params.name );
 }
   ngOnInit() {
-   this.teams = this.teamService.findByTeamNummer(this.id);
+   this.teams = this.teamService.findByName(this.name);
+   this.teams.subscribe(temp => this.team = temp);
   }
 }

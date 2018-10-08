@@ -13,21 +13,31 @@
     <div class="col">
 
       <table class="table">
-          <thead>
           <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Spieler 1</th>
-            <th>Spieler 2</th>
-            <th></th>
+            <td>#</td>
+            <td>{{spieler.spielerNumber.id}}</td>
           </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let spieler1 of spieler1 | async">
-            <td>{{spieler1.spielerNumber.id}}</td>
+          <tr>
+            <td>Name:</td>
+            <td>{{spieler.name}}</td>
           </tr>
-
-          </tbody>
+          <tr>
+            <td>Twitch:</td>
+            <td>
+              <iframe
+                src={{twitchURL}}
+                height="378"
+                width="620"
+                frameborder="0"
+                scrolling="no"
+                allowfullscreen="true">
+              </iframe>
+            </td>
+          </tr>
+          <tr>
+            <td>Teams:</td>
+            <td></td>
+          </tr>
         </table>
     </div>
   </div>

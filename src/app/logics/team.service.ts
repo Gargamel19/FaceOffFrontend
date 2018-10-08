@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class TeamService {
 
   private apiUrl = 'http://localhost:8080/teams';
+  private apiSoloTeamUrl = 'http://localhost:8080/team';
   constructor(private http: HttpClient) {
   }
 
@@ -16,7 +17,10 @@ export class TeamService {
     return this.http.get<Team[]>(this.apiUrl);
   }
   findByTeamNummer(id: number): Observable<Team> {
-    return this.http.get<Team>(this.apiUrl + '/' + id);
+    return this.http.get<Team>(this.apiSoloTeamUrl + '/' + id);
+  }
+  findByName(name: string): Observable<Team> {
+    return this.http.get<Team>(this.apiSoloTeamUrl + '/@/' + name);
   }
 
 }

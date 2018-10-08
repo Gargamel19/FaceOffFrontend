@@ -4,6 +4,7 @@ import { Team } from '../logics/team';
 import { Observable } from 'rxjs';
 import { SpielerService } from '../logics/spieler.service';
 import { Spieler } from '../logics/spieler';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-team-table',
@@ -16,34 +17,41 @@ export class TeamTableComponent implements OnInit {
   teams: Observable<Team[]>;
   spieler1: Observable<Spieler>;
   spieler2: Observable<Spieler>;
-  spieler1ROH: Spieler = new Spieler('', '');
-  spieler2ROH: Spieler = new Spieler('1', '1');
   temp: Team;
   i = 0;
 
-  constructor(private teamService: TeamService, private spielerService: SpielerService) {
+  constructor(private teamService: TeamService, private spielerService: SpielerService, private router: Router) {
   }
 
   ngOnInit() {
     this.teams = this.teamService.findAll();
     this.teams.subscribe(res => {
       res.forEach(temp1 => {
-        this.sucheSpieler1(temp1.member[0].id);
-        this.sucheSpieler2(temp1.member[1].id);
+        this.sucheSpieler1(temp1.member[0]);
+        this.sucheSpieler2(temp1.member[1]);
         this.i = this.i + 1;
         });
       });
   }
 
-  sucheSpieler1(spielerNumber: number) {
-    console.log(spielerNumber);
-    this.spieler1 = this.spielerService.findBySpielerNummer(spielerNumber);
+  sucheSpieler1(name: string) {
+    console.log(name);
+    this.spieler1 = this.spielerService.findByName(name);
     this.spieler1.subscribe(temp => console.log(temp.name));
   }
 
-  sucheSpieler2(spielerNumber: number) {
-    console.log(spielerNumber);
-    this.spieler2 = this.spielerService.findBySpielerNummer(spielerNumber);
+  sucheSpieler2(name: string) {
+    console.log(name);
+    this.spieler2 = this.spielerService.findByName(name);
     this.spieler2.subscribe(temp2 => console.log(temp2.name));
   }
+
+  toPlayer(playerNumber: number) {
+    this.router.navigate(['spieler', playerNumber]);
+  }
+
+  toTeam(teamNumber) {
+    this.router.navigate(['team', teamNumber]);
+  }
+
 }
