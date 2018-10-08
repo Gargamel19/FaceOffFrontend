@@ -13,14 +13,13 @@ export class SpielerXComponent implements OnInit {
 
   title = 'FaceOff';
   id: number;
-  spieler: Observable<Spieler[]>;
-  spieler1: Spieler;
+  spieler: Observable<Spieler>;
+  spieler1Solo: Spieler;
 
 constructor(private route: ActivatedRoute, private spielerService: SpielerService) {
     this.route.params.subscribe( params => this.id = params.id );
 }
   ngOnInit() {
    this.spieler = this.spielerService.findBySpielerNummer(this.id);
-   this.spieler.forEach(temp => console.log(temp))
   }
 }

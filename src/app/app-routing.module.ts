@@ -6,6 +6,7 @@ import { TeamTableComponent } from './team-table/team-table.component';
 import { SpielerTableComponent } from './spieler-table/spieler-table.component';
 import { SigneInComponent } from './signe-in/signe-in.component';
 import { SpielerXComponent } from './spielerX/spielerX.component';
+import { TeamXComponent } from './teamX/teamX.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'teams', component: TeamTableComponent},
   { path: 'spieler', component: SpielerTableComponent},
   { path: 'spieler/:id', component: SpielerXComponent},
+  { path: 'team/:id', component: TeamXComponent},
   { path: 'teams/register', component: SigneInComponent},
 ];
 

@@ -17,7 +17,7 @@ export class SpielerService {
     return this.http.get<Spieler[]>(this.apiUrl);
   }
 
-  findBySpielerNummer(id: number): Observable<Spieler[]> {
-    return this.http.get<Spieler[]>(this.apiUrl + '/' + id);
+  findBySpielerNummer(id: number): Observable<Spieler> {
+    return this.http.get<Spieler>(this.apiUrl + '/' + id);
   }
 }

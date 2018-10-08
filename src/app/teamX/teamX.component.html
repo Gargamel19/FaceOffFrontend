@@ -19,7 +19,6 @@
             <th>Name</th>
             <th>Spieler 1</th>
             <th>Spieler 2</th>
-            <th>Kills</th>
             <th></th>
           </tr>
           </thead>
@@ -27,9 +26,6 @@
           <tr *ngFor="let team of teams | async">
             <td>{{team.teamNumber.id}}</td>
             <td>{{team.name}}</td>
-            <td>Spieler1</td>
-            <td>Spieler2</td>
-            <td>{{spieler1ROH.kills + spieler2ROW.kills}}</td>
           </tr>
 
           </tbody>

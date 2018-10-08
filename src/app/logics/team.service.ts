@@ -15,4 +15,8 @@ export class TeamService {
   findAll(): Observable<Team[]>  {
     return this.http.get<Team[]>(this.apiUrl);
   }
+  findByTeamNummer(id: number): Observable<Team> {
+    return this.http.get<Team>(this.apiUrl + '/' + id);
+  }
+
 }

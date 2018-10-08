@@ -11,6 +11,23 @@
 <div class="container">
   <div class="row">
     <div class="col">
+
+      <table class="table">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Spieler 1</th>
+            <th>Spieler 2</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let spieler1 of spieler1 | async">
+            <td>{{spieler1.spielerNumber.id}}</td>
+          </tr>
+
+          </tbody>
+        </table>
     </div>
   </div>
-</div>

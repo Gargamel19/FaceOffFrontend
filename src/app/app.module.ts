@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { TeamTableComponent } from './team-table/team-table.component';
 import { SpielerTableComponent } from './spieler-table/spieler-table.component';
 import { SpielerXComponent } from './spielerX/spielerX.component';
+import { TeamXComponent } from './teamX/teamX.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SpielerXComponent } from './spielerX/spielerX.component';
     SigneInComponent,
     TeamTableComponent,
     SpielerTableComponent,
-    SpielerXComponent
+    SpielerXComponent,
+    TeamXComponent
   ],
   imports: [ BrowserModule,
     HttpClientModule,
