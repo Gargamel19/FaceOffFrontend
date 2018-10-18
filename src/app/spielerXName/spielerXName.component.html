@@ -5,39 +5,31 @@
   </h1>
   <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 
-  <h2>Spieler: </h2>
-  Hier erscheinen alle Teams, die sich angemeldet haben
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col">
+  <h2>Spieler: {{ spieler.name }}</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col">
 
-      <table class="table">
-          <tr>
-            <td>#</td>
-            <td>{{spieler.spielerNumber.id}}</td>
-          </tr>
+        <table class="table">          
           <tr>
             <td>Name:</td>
             <td>{{spieler.name}}</td>
           </tr>
           <tr>
             <td>Twitch:</td>
-            <td>
-              <iframe
-                src={{twitchURL}}
-                height="378"
-                width="620"
-                frameborder="0"
-                scrolling="no"
-                allowfullscreen="true">
-              </iframe>
-            </td>
+            <td><a href="http://twitch.tv/{{spieler.twitch}}">{{spieler.twitch}}</a></td>
           </tr>
           <tr>
             <td>Teams:</td>
-            <td></td>
+            <td><a *ngFor="let team of spieler.teams" href="team/{{team}}">{{ team }}, </a>       
+          </tr>
+          <tr>
+            <td>Kills:</td>
+            <td>{{ spieler.kills }}</td>
           </tr>
         </table>
+        <td><a href="spieler">zurueck zu den Speilern</a></td>
+      </div>
     </div>
   </div>
+</div>

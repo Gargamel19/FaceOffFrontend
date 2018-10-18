@@ -5,24 +5,18 @@
   </h1>
   <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 
-  <h2>Team: {{team.name}}</h2>
-
-  <div class="container">
-    <div class="row">
-      <div class="col">
-
-        <table class="table">
-          <tr>
-            <td>Name:</td>
-            <td>{{team.name}}</td>
-          </tr>
-          <tr>
-            <td>Player:</td>
-            <td><a href="spieler/{{team.member[0]}}"> {{team.member[0]}} </a>, <a href="spieler/{{team.member[1]}}">{{team.member[1]}}</a></td>
-          </tr>
-        </table>
-        <td><a href="teams">zurueck zu den Teams</a></td>
-      </div>
-    </div>
-  </div>
+  <h2>Anmeldung: </h2>
+  For your registration we need your ingame names from PUBG!
+  <table align="center">
+    <tr>
+      <th><h2>Teamname:</h2></th><th><input #name></th>
+    </tr>
+    <tr>
+      <th>First Player:</th><th><input #spieler1></th>
+    </tr>
+    <tr>
+      <th>Second Player:</th><th><input #spieler2></th>
+    </tr>
+  </table>
+  <button (click)="summit(name.value, spieler1.value, spieler2.value)" >send</button>
 </div>

@@ -9,6 +9,8 @@ import { Observable } from 'rxjs';
 export class SpielerService {
 
   private apiUrl = 'http://localhost:8080/spieler';
+  temp = 'http://localhost:8080/register/spieler';
+  tempSpieler: Spieler;
 
   constructor(private http: HttpClient) {
   }
@@ -22,5 +24,15 @@ export class SpielerService {
   }
   findByName(name: string): Observable<Spieler> {
     return this.http.get<Spieler>(this.apiUrl + '/@/' + name);
+  }
+  saveSpieler(name: string, twitch: string) {
+    this.tempSpieler = new Spieler(name, twitch);
+    this.http.post<Spieler>(this.temp, this.tempSpieler).subscribe(res => {
+      console.log(res);
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 }

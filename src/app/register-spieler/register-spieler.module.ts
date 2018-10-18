@@ -1,15 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { SigneInComponent } from './signe-in.component';
+import { RegisterSpielerComponent } from './register-spieler.component';
 
 @NgModule({
   declarations: [
-    SigneInComponent
+    RegisterSpielerComponent
   ],
   imports: [ BrowserModule,
   ],
   providers: [],
-  bootstrap: [SigneInComponent]
+  bootstrap: [RegisterSpielerComponent]
 })
 export class SigneInModule { }
